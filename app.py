@@ -13,7 +13,10 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-
+@app.route('/', methods=['GET', 'POST'])
+@cross_origin()
+def getHello():
+    return "Hello fron jenkins CICD"
 @app.route('/getdistance', methods=['GET', 'POST'])
 @cross_origin()
 def getDistance():
